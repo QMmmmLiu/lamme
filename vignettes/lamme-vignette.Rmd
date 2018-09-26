@@ -1,5 +1,5 @@
 ---
-title: "an Illustration of lemme"
+title: "lamme: an Illustration"
 author: "Qimin Liu"
 output: rmarkdown::pdf_document
 vignette: >
@@ -20,7 +20,7 @@ In addition, we show how power calculation and sample size planning for LANOVA a
 
 A randomized pretest-posttest design was used to investigate the effects of interactive cognitive-motor step training on cognitive risk factors for falling in older adults. The experimental treatment for the intervention group (n = 39) consisted of four games all combining physical stepping and mental tasks, while the control group (n = 42) received brochures about healthy lifestyle and instructions to continue their normal routine but no cognitive or physical training. 
 
-For example, one mental task is the letter-digit test where the participants were asked to match digits and numbers as quickly as possible. One of the outcome measures for this task was simple hand reaction time in ms. The same measure was also obtained at baseline prior to training. For demonstration, we selected hand reaction time as the variable to focus on for our analyses.
+For example, one mental task is the letter-digit test where the participants were asked to match digits and numbers as quickly as possible. One of the outcome measures for this task was simple hand reaction time in $ms$. The same measure was also obtained at baseline prior to training. For demonstration, we selected hand reaction time as the variable to focus on for our analyses.
 
 - group: a categorical variable denoting if the individual is from the treatment or control group 
 - pre_HRT: prettest hand reaction time
@@ -52,11 +52,11 @@ Having established a theoretical reason for testing multiplicative effects, we n
 abc(post_HRT,group,pre_HRT)
 ```
 
-Based on the AIC values, all other models received less support than the LANCOVA model ($AIC=743.156$,$\Delta AIC>2$ compared to all other compared models). For illustrative purpose, imagine that no pretest scores were collected, in this case, we use `abc(post_HRT,group)`, the AIC value for LANOVA and ANOVA models are respectively `round(abc(post_HRT,group),3)`: the LANOVA model received considerably more support than the ANOVA model.
+Based on the AIC values, all other models received less support than the LANCOVA model ($AIC=743.156$, $\Delta AIC>2$ compared to all other compared models). For illustrative purpose, imagine that no pretest scores were collected, in this case, we use `abc(post_HRT,group)`, the AIC value for LANOVA and ANOVA models are respectively `round(abc(post_HRT,group),3)`: the LANOVA model received considerably more support than the ANOVA model.
 
 # Data Analysis
 
-Given the theoretical motivation and the empirical diagnostic, it is justified for us to test and estiamte the multiplicative effects of the experimental treatment on the hand reaction time. We use the function `lancova`.
+Given the theoretical motivation and the empirical diagnostic, it is justified for us to test and estimate the multiplicative effects of the experimental treatment on the hand reaction time. We use the function `lancova`.
 
 ```{r}
 lancova(post_HRT,group,pre_HRT)
@@ -87,18 +87,23 @@ lanova(post_HRT,group)
 `lamme` package can also be used for power calculation and sample size planning. For power calculation, we use `pwr.lanova` and `pwr.lancova` respectively for LANOVA and LANCOVA. 
 
 ```{r}
-# power in three-group LANOVA with per-group sample size of 40 given small population effect
+# power in three-group LANOVA with per-group sample size of 40 given small population 
+# effect
 pwr.lanova(3,40,.01,.05)
-# power in three-group LANCOVA with per-group sample size of 40 and pretest-posttest correlation of .5 given small population effect
+# power in three-group LANCOVA with per-group sample size of 40 and pretest-posttest 
+# correlation of .5 given small population effect
 pwr.lancova(3,40,.01,.5,.05)
 ```
 
 For sample size planning, we use `ss.lanova` and `ss.lancova` respectively for LANOVA and LANCOVA. 
 
 ```{r}
-# sample size planning in three-group LANOVA with desired power of .8 and significance level of .05 given assumed small population effect
+# sample size planning in three-group LANOVA with desired power of .8 and 
+# significance level of .05 given assumed small population effect
 ss.lanova(3,.01,.8,.05)
-# sample size planning in three-group LANOVA with desired power of .8 and significance level of .05 and pretest-posttest correlation of .5 given assumed small population effect
+# sample size planning in three-group LANOVA with desired power of .8 and 
+# significance level of .05 and pretest-posttest correlation of .5 given 
+# assumed small population effect
 ss.lancova(3,.01,.5,.8,.05)
 ```
 

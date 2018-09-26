@@ -10,10 +10,10 @@
 #' @return An summary object of the LANOVA results.
 #' In residuals, the summary statistics are of sample multiplicative errors.
 #' In the coefficients table, the estimate of the intercept is the default group (control group) geometric mean estimate.
-#' Other coefficient estimates are effect size measure zeta's estiamtes. The standard error is on the logged scale.
+#' Other coefficient estimates are effect size measure zeta's estimates. The standard error is on the logged scale.
 #' The confidence intervals are of 95% for the control group geometric mean and for the zeta estimates,
 #' respectively, of the intercept and otherwise.
-#' The residual standard error is that of the logged scale residuals. Both R-squared and Ajudsted R-squared are computed
+#' The residual standard error is that of the logged scale residuals. Both R-squared and Adjusted R-squared are computed
 #' on the logged model. If `plot==TRUE`, diagnostic plots are provided.
 #' @examples
 #' # generate data
