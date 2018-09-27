@@ -1,6 +1,6 @@
 Package: lamme
 Title: Log-Analytic Methods for Multiplicative Effects
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: person("Qimin", "Liu", email = "qliu6@nd.edu", role = c("aut", "cre"))
 Description: The package includes log-analytic methods intended for testing multiplicative effects.
 Depends: R (>= 3.4.3)
