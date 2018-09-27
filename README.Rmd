@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# lamme
+
+The goal of lamme is to implement log-analytic methods for testing and esitmating multiplicative effects.
+
+## Installation
+
+You can install lamme from github with: 
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("QMmmmLiu/lamme",build_vignettes=T)
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(lamme)
+data("schoene")
+attach(schoene)
+abc(post_HRT,group,pre_HRT)
+lanova(post_HRT,group)
+lancova(post_HRT,group,pre_HRT)
+```
+
+For detailed illustration, use `vignettes("lamme-vignette")`.
