@@ -18,13 +18,13 @@ boot.es(y, g, x = 0, nrep = 1000, alpha = 0.05)
 \item{alpha}{the significance level (default=.05)}
 }
 \value{
-a table of lower and upper limit from bias-corrected and expanded percentile boostrapped
+a table of lower and upper limit from bias-corrected and accelerated and expanded percentile boostrapped
 confidence interval. The first row is on the geometric mean of the control group
 (default group of comparison). After that, zeta estimates are given of the each respective group versus
 the control group (default group of comparison). Then, if pretest scores are given, CI on the beta
 estimate is given. Lastly, CI on the signal-to-noise ratio, an overall effect size measure, is provided.
-        \item{BCa LL}{the lower limit of the Bias-Corrected boostrapped Confidence Interval}
-        \item{BCa UL}{the upper limit of the Bias-Corrected boostrapped Confidence Interval}
+        \item{BCa LL}{the lower limit of the Bias-Corrected and accelerated boostrapped Confidence Interval}
+        \item{BCa UL}{the upper limit of the Bias-Corrected and accelerated boostrapped Confidence Interval}
         \item{exp LL}{the lower limit of the expanded percentile boostrapped Confidence Interval}
         \item{exp UL}{the upper limit of the expanded percentile boostrapped Confidence Interval}
 }

@@ -66,7 +66,7 @@ The experimental treatment shows a significant multiplicative effect, $\zeta=.96
 
 We now move on to interpret other parameter estimates from the output. In the `intercept` row, the estimate is of the control group posttest (geometric) mean. In the `x` row, the estimate is of the power relationship parameter $\beta$. Here we can see that the pretest scores also significantly predicts the posttest scores, $p<.05$. Note that the standard errors are from the logged model. In terms of overall model significance, we see that $F(2,78)=67.19, p<.05$. We can also calculate the overall model effect size, $\frac{R^2}{1-R^2}=\frac{.6327}{1-.6327}=1.72$. 
 
-Moreover, boostrapped effect size measures can be obtained via `boot.es`. Note that `boot.es` follows bootstrapping procedures and should show performance expected of the respective procedure. However, the exact performance of the boostrapping procedures is still under evaluation. As such, the users should use `boot.es` with caution. Currently, `boot.es` output the bias-corrected boostrap confidence interval and the expanded percentile confidence interval.
+Moreover, boostrapped effect size measures can be obtained via `boot.es`. Note that `boot.es` follows bootstrapping procedures and should show performance expected of the respective procedure. However, the exact performance of the boostrapping procedures is still under evaluation. As such, the users should use `boot.es` with caution. Currently, `boot.es` output the bias-corrected and accelerated boostrap confidence interval and the expanded percentile confidence interval.
 
 ```{r}
 boot.es(post_HRT,group,pre_HRT)
