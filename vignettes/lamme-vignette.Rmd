@@ -10,7 +10,7 @@ vignette: >
 
 # Goal
 
-This vignette focuses on illustrating the use of different functions in the `lamme` package in a realistic scenario. The `lamme` package includes function related to log-analytic methods for multiplicative effects. For example, the Logged ANOVA has the full model as $$Y_{ij}=\mu^*\theta_j X_{ij}^{\beta}\epsilon_{ij}$$ where $\mu^*$ is the geometric mean of the posttest score, $X$ denotes the pretest scores, $\beta$ denotes the power parameter that describes the potentially nonlinear relationship between pretest and posttest scores, $\theta_j$ is the ratio effect of group $j$ with respect to the grand mean, and $\epsilon$ is the multiplicative error term.
+This vignette focuses on illustrating the use of different functions in the `lamme` package in a realistic scenario. The `lamme` package includes function related to log-analytic methods for multiplicative effects. For example, the Logged ANCOVA (LANCOVA) has the full model as $$Y_{ij}=\mu^*\theta_j X_{ij}^{\beta}\epsilon_{ij}$$ where $\mu^*$ is the geometric mean of the posttest score, $X$ denotes the pretest scores, $\beta$ denotes the power parameter that describes the potentially nonlinear relationship between pretest and posttest scores, $\theta_j$ is the ratio effect of group $j$ with respect to the grand mean, and $\epsilon$ is the multiplicative error term.
 
 We utilize an open dataset by Schoene et al. (2015). We first describe the data, then explain the motivation for using `lamme`, and show how different functions in `lamme` can be applied and interpreted. 
 
@@ -42,21 +42,21 @@ To view the data information, `??schoene` can be used.
 
 ## Theoretical Motivation
 
-As reaction time differs drastically across people as evidenced in the standard deviation of the pretest hand reaction time, it would make sense that the intervention may result in larger decreases in reaction time for those with higher pretest scores than for those with lower pretest scores. 
+Because reaction time differs drastically across people as evidenced in the standard deviation of the pretest hand reaction time, it would make sense that the intervention may result in larger decreases in reaction time for those with higher pretest scores than for those with lower pretest scores. 
 
 ## Empirical Diagnostic
 
-Having established a theoretical reason for testing multiplicative effects, we now hope to obtain more support from empirical diagnostics. Here, we apply the `abc` function in order to do AIC comparison with modified Box-Cox (ABC) procedure. Using the ABC procedure, as opposed to simply compare the multiplicative and additive models, is important because the model fit statistics are only comparable across models in the ABC procedure. More information about `abc` can be obtained through `?abc`. When pretest scores are input into the `abc` function, the ABC procedure compares LANCOVA, ANCOVA, ANCOHET, and ANCOVA with log-transformed y by default. 
+Having established a theoretical reason for testing multiplicative effects, we now hope to obtain more support from empirical diagnostics. Here, we apply the `abc` function in order to do AIC comparison with modified Box-Cox (ABC) procedure. Using the ABC procedure, as opposed to simply comparing the multiplicative and additive models, is important because the model fit statistics are only comparable across models in the ABC procedure. More information about `abc` can be obtained through `?abc`. When pretest scores are input into the `abc` function, the ABC procedure compares LANCOVA, ANCOVA, ANCOHET, and ANCOVA with log-transformed y by default. 
 
 ```{r}
 abc(post_HRT,group,pre_HRT)
 ```
 
-Based on the AIC values, all other models received less support than the LANCOVA model ($AIC=743.156$, $\Delta AIC>2$ compared to all other compared models). For illustrative purpose, imagine that no pretest scores were collected, in this case, we use `abc(post_HRT,group)`, the AIC value for LANOVA and ANOVA models are respectively `round(abc(post_HRT,group),3)`: the LANOVA model received considerably more support than the ANOVA model.
+Based on the AIC values, all other models received less support than the LANCOVA model ($AIC=743.156$, $\Delta AIC>2$ compared to all other compared models). For illustrative purpose, imagine that no pretest scores were collected. in this case, we use `abc(post_HRT,group)`, the AIC value for ANOVA and LANOVA models are respectively `r abc(schoene$post_HRT,schoene$group)`: the LANOVA model received considerably more support than the ANOVA model.
 
 # Data Analysis
 
-Given the theoretical motivation and the empirical diagnostic, it is justified for us to test and estimate the multiplicative effects of the experimental treatment on the hand reaction time. We use the function `lancova`.
+To test and estimate the multiplicative effects of the experimental treatment on the hand reaction time. We use the function `lancova`.
 
 ```{r}
 lancova(post_HRT,group,pre_HRT)

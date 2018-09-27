@@ -3,7 +3,7 @@
 #' Compute the required per-group sample size for the LANCOVA test.
 #'
 #' @param k the number of groups.
-#' @param r_sqrd the expected explained variance (on the logged scale)
+#' @param r_sqrd the expected explained variance by the model (on the logged scale)
 #' @param rho_sqrd the pretest-posttest correlation
 #' @param power the desired statistical power (default=.8)
 #' @param alpha the significance level (default=.05)

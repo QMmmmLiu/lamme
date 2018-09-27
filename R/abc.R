@@ -11,8 +11,7 @@
 #' @param y the raw posttest scores of a continuous outcome variable.
 #' @param x (optional) the raw pretest scores of a continuous outcome variable.
 #' @param g the categorical variable that denotes the group membership.
-#' @return AIC results of different models. The model with smallest AIC should
-#' be preferred.
+#' @return AIC results of different models. The model with smallest AIC is preferred.
 #' @examples
 #' data("schoene")
 #' attach(schoene)

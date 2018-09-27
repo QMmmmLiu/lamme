@@ -11,7 +11,7 @@ ss.lancova(k, rho_sqrd, r_sqrd, power = 0.8, alpha = 0.05)
 
 \item{rho_sqrd}{the pretest-posttest correlation}
 
-\item{r_sqrd}{the expected explained variance (on the logged scale)}
+\item{r_sqrd}{the expected explained variance by the model (on the logged scale)}
 
 \item{power}{the desired statistical power (default=.8)}
 

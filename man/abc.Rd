@@ -14,8 +14,7 @@ abc(y, g, x = 0)
 \item{x}{(optional) the raw pretest scores of a continuous outcome variable.}
 }
 \value{
-AIC results of different models. The model with smallest AIC should
-be preferred.
+AIC results of different models. The model with smallest AIC is preferred.
 }
 \description{
 the AIC comparison with Modified Box-Cox Transformation (ABC)

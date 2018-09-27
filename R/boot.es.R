@@ -11,8 +11,8 @@
 #' @param alpha the significance level (default=.05)
 #' @return a table of lower and upper limit from bias-corrected and expanded percentile boostrapped
 #' confidence interval. The first row is on the geometric mean of the control group
-#' (default group of comparison). After that, zeta estimates are given of the respective group versus
-#' the control group (default group of comparison). Then, if pretest levels are given, CI on the beta
+#' (default group of comparison). After that, zeta estimates are given of the each respective group versus
+#' the control group (default group of comparison). Then, if pretest scores are given, CI on the beta
 #' estimate is given. Lastly, CI on the signal-to-noise ratio, an overall effect size measure, is provided.
 #'         \item{BCa LL}{the lower limit of the Bias-Corrected boostrapped Confidence Interval}
 #'         \item{BCa UL}{the upper limit of the Bias-Corrected boostrapped Confidence Interval}

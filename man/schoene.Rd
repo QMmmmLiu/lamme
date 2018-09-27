@@ -25,6 +25,6 @@ table(schoene$group)
 }
 \references{
 Schoene D, Valenzuela T, Toson B, Delbaere K, Severino C, Garcia J, et al. (2015) Interactive Cognitive-Motor Step Training Improves Cognitive Risk Factors of Falling in Older Adults – A Randomized Controlled Trial. PLoS ONE 10(12): e0145161.
-(\href{doi:10.1371/journal.pone.0145161}{doi:10.1371/journal.pone.0145161})
+(\href{https://doi.org/10.1371/journal.pone.01451611}{https://doi.org/10.1371/journal.pone.0145161})
 }
 \keyword{datasets}
